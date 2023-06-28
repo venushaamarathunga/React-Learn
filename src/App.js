@@ -1,29 +1,27 @@
 import "./App.css";
 
 function App() {
-  // jsx
-  const name = <h3>Venusha Amarathunga</h3>;
-  const add = <h3>Kelaniya</h3>;
-  const user = (
-    <div>
-      {name} {add}
-    </div>
-  );
-
   return (
     <div className="App">
-      <UserCom />
-      <UserCom />
+      <UserCom name="Venusha" age={28} address="Kelaniya" />
+      <UserCom name="Tharangi" age={27} address="Dehiattakandiye" />
     </div>
   );
 }
+
+// // normal js object
+// const propsUser = {
+//   name: "Thara",
+//   add: "Dehiaththakandiye",
+// };
+
 // react components
-const UserCom = () => {
+const UserCom = (props) => {
   return (
     <div>
-      <h2>Venusha!</h2>
-      <h2>Kelaniya!</h2>
-      <h2>27!</h2>
+      <h2>{props.name}</h2>
+      <h2>{props.age}</h2>
+      <h2>{props.address}</h2>
     </div>
   );
 };
